@@ -491,7 +491,25 @@ public class ViewInfra extends javax.swing.JFrame {
     }//GEN-LAST:event_btnaddActionPerformed
 
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
-        // TODO add your handling code here:
+          try {
+            int selecao = tabelaApp.getSelectedRow();
+            int id = Integer.parseInt(tabelaApp.getModel().getValueAt(selecao, 0).toString());
+
+            ModelInfra modelInfra = new ModelInfra();
+            modelInfra.setId(id);
+            modelInfra.setEquipamento(equipamento.getText());
+           // System.out.print(modelUsuario.getAnydesk());
+            ControlInfra control = new ControlInfra();
+            control.controlRemove(modelInfra);
+            carregarInfra();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewPass.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(ViewUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+
+            JOptionPane.showMessageDialog(null, "Dados Removido com sucesso...");
+        }
     }//GEN-LAST:event_btnDelActionPerformed
 
     /**

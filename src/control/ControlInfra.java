@@ -40,4 +40,14 @@ public class ControlInfra {
         modelinfra =  dao.select(id);
         return modelinfra;
     }
+      
+      //REMOVER
+        public void controlRemove(ModelInfra modelInfra) throws ParseException {
+         if(!modelInfra.getEquipamento().isEmpty()){
+           System.out.printf("camada de controle"); 
+           DaoInfra dao = new DaoInfra();
+           dao.Remover(modelInfra);
+        } 
+        
+    }
 }

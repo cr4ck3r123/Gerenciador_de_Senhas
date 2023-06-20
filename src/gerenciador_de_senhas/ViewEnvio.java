@@ -140,6 +140,11 @@ public class ViewEnvio extends javax.swing.JFrame {
         btnDel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gerenciador_de_senhas/img/deletar-lixeira.png"))); // NOI18N
         btnDel.setText("Remover");
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -248,6 +253,10 @@ public class ViewEnvio extends javax.swing.JFrame {
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
   
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDelActionPerformed
 
     /**
      * @param args the command line arguments
