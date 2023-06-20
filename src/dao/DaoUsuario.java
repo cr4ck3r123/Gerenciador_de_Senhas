@@ -202,7 +202,7 @@ public class DaoUsuario {
         }
     }
 
-    //EDITAR
+    //Remover
     public void Remover(ModelUsuario modelusuario) throws ParseException {
         conexao = Conexao.conector();
         String sql = "delete from usuario where id = ?";

@@ -5,6 +5,7 @@
 package dao;
 
 import gerenciador_de_senhas.model.ModelInfra;
+import gerenciador_de_senhas.model.ModelUsuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -143,4 +144,18 @@ public class DaoInfra {
         return null;
     }
 
+      //Remover
+    public void Remover(ModelInfra modelinfra) throws ParseException {
+        conexao = Conexao.conector();
+        String sql = "delete from infraestrutura where id = ?";
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, modelinfra.getId());
+            pst.execute();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
 }

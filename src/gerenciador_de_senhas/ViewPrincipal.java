@@ -181,11 +181,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
         jMenu4.setFont(new java.awt.Font("Perpetua", 0, 18)); // NOI18N
 
         jMenuItem5.setFont(new java.awt.Font("Perpetua Titling MT", 0, 15)); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aviao.png"))); // NOI18N
         jMenuItem5.setText("ENVIO");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
         jMenu4.add(jSeparator1);
 
         jMenuItem6.setFont(new java.awt.Font("Perpetua Titling MT", 0, 15)); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/recebido.png"))); // NOI18N
         jMenuItem6.setText("RECEBER");
         jMenu4.add(jMenuItem6);
 
@@ -328,6 +335,19 @@ public class ViewPrincipal extends javax.swing.JFrame {
             Logger.getLogger(ViewPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBackupMouseClicked
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+              try {
+            ViewEnvio envio  =  null;
+            envio = new ViewEnvio();
+            envio.getInstance().setVisible(true);
+            envio.toFront();
+                        
+        } catch (ParseException ex) {
+            Logger.getLogger(ViewPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
