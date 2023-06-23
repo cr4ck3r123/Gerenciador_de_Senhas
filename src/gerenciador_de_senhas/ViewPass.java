@@ -162,6 +162,7 @@ public class ViewPass extends javax.swing.JFrame {
         btnDel1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         cbcategoria = new javax.swing.JComboBox<>();
+        btnEdit1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -295,6 +296,15 @@ public class ViewPass extends javax.swing.JFrame {
 
         cbcategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
 
+        btnEdit1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnEdit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gerenciador_de_senhas/img/ID-Card-icon.png"))); // NOI18N
+        btnEdit1.setText("Novo");
+        btnEdit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEdit1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -310,6 +320,8 @@ public class ViewPass extends javax.swing.JFrame {
                 .addComponent(btnEdit)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -404,7 +416,8 @@ public class ViewPass extends javax.swing.JFrame {
                     .addComponent(btnVisu)
                     .addComponent(btnEdit)
                     .addComponent(btnDel)
-                    .addComponent(btnDel1))
+                    .addComponent(btnDel1)
+                    .addComponent(btnEdit1))
                 .addContainerGap())
         );
 
@@ -586,6 +599,15 @@ public class ViewPass extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDelActionPerformed
 
+    private void btnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdit1ActionPerformed
+        aplicacao.setText("");
+        user.setText("");
+        pass1.setText("");
+        pass2.setText("");
+        endereco.setText("");
+        btnAdd.setEnabled(true);
+    }//GEN-LAST:event_btnEdit1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -634,6 +656,7 @@ public class ViewPass extends javax.swing.JFrame {
     private javax.swing.JButton btnDel;
     private javax.swing.JButton btnDel1;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnEdit1;
     private javax.swing.JButton btnVisu;
     private javax.swing.JComboBox<String> cbcategoria;
     private javax.swing.JTextField data;
